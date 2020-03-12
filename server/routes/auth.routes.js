@@ -1,6 +1,12 @@
-const AuthController = require('../controllers/contact.controllers');
+const express = require('express');
+const router = express.Router();
 
-module.exports = function(app){
-    app.post('/api/auth', AuthController.getContact);
-    app.get('/api/auth', AuthController.getContact);
-}
+router.post('/', (req, res) => {
+    res.send('Authenticate Login')
+});
+
+router.get('/', (req, res) => {
+    res.send('Retrieve authentication')
+});
+
+module.exports = router;

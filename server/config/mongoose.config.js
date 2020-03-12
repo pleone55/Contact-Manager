@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodbd://localhost/contact-manager", {
+mongoose.connect("mongodb://localhost/contact-manager", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
