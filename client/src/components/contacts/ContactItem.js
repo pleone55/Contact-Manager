@@ -2,20 +2,20 @@ import React, { useContext } from 'react';
 import ContactContext from '../../context/contact/ContactContext';
 
 const ContactItem = ({ contact }) => {
-    contactContext = useContext(ContactContext);
+    const contactContext = useContext(ContactContext);
     const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-    const { id, name, email, phone, type } = contact;
+    const { _id, name, email, phone, type } = contact;
 
     const onDelete = () => {
-        deleteContact(id);
+        deleteContact(_id);
         clearCurrent();
     }
 
     return (
         <div className="card bg-light">
             <h3 className="text-primary text-left">
-                {name}{' '} <span style={{float: 'right'}} className={'badge ' + (type == 'professional' ? 'badge-success' : 'badge-primary')}>{type.charAt(0).toUpperCase() + type.slice(1)}</span>
+                {name}{' '} <span style={{float: 'right'}} className={'badge ' + (type === 'professional' ? 'badge-success' : 'badge-primary')}>{type.charAt(0).toUpperCase() + type.slice(1)}</span>
             </h3>
             <ul className="list">
                 {email && (<li>

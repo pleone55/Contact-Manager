@@ -30,15 +30,4 @@ const UserSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
-// UserSchema.virtual('confirmPassword')
-//     .get(() => this._confirmedPassword)
-//     .set(value => this._confirmedPassword = value);
-
-// UserSchema.pre('validate', function(next) {
-//     if(this.password !== this.confirmPassword) {
-//         this.invalidate('confirmedPassword', 'Passwords must match confirm password')
-//     }
-//     next();
-// });
-
 module.exports = mongoose.model('user', UserSchema);
